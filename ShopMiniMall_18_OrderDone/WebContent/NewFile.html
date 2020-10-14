@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+var url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst'; /*URL*/
+var queryParams = '?' + encodeURIComponent('ServiceKey') + '='+'M79BhkgLJc%2FMfwtAVIoxUESusfZLjn3uPx0eAAfCn67XpcxLxwDnsAnstaH3EpqYisn5zAWe626x87m1d3z9Kw%3D%3D'; /*Service Key*/
+queryParams += '&' + encodeURIComponent('ServiceKey') + '=' + encodeURIComponent('-'); /**/
+queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('XML'); /**/
+queryParams += '&' + encodeURIComponent('regId') + '=' + encodeURIComponent('11B00000'); /**/
+queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent('202010130600'); /**/ 
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
+};
+
+xhr.send('')
+</script>
+</head>
+<body>
+
+</body>
+</html>
